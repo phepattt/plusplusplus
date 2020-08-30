@@ -1,25 +1,27 @@
-#define _CRT_SECURE_NO_WARNINGS 
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+#include<math.h>
+
 int main()
 {
-	int a, b = 1, c = 0;
-	printf("Enter number : ");
+	int a, c = 0, d = 0;
+	printf("Enter Number : ");
 	scanf("%d", &a);
-	while (b < a)
+	while (a >= 10)
 	{
-		if (a % b == 0)
-		{
-			c = c + b;
-			b = b + 1;
-		}
-		else
-		{
-			b = b + 1;
-		}
+		c += a % 10;
+		a = (a - (a % 10)) / 10;
 	}
-	if (a = b)
+	c = c + a;
+	printf("%d\n", c);
+
+	if (c > 10)
 	{
-		printf("%d", c);
+		d += c % 10;
+		c = (c - (d)) / 10;
+		c = c + d;
+		printf("%d ", c);
 	}
+
 	return 0;
 }
